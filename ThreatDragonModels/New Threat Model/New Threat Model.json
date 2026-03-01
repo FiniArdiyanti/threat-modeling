@@ -303,7 +303,7 @@
             },
             "vertices": [
               {
-                "x": 680,
+                "x": 720,
                 "y": 130
               }
             ]
@@ -353,7 +353,12 @@
               "cell": "2c90c193-6add-4baa-9283-415f520f2f13",
               "port": "a00063a9-be04-4356-9e18-3359582365ed"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 530,
+                "y": 170
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -451,7 +456,12 @@
               "cell": "f52c96f2-53b3-4df9-aacf-0ee365723741",
               "port": "14b8dd87-868a-4582-af3f-ac0419eaaaa2"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 720,
+                "y": 30
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -709,7 +719,11 @@
                 "b950b049-793a-4474-b143-de789f419342",
                 "486703df-3427-4806-baf2-e23e8f826317",
                 "c53c38bf-4408-4e2e-8d0a-d27a28fa3ffa",
-                "4137b070-03e7-4e7d-bf33-dfedf5f39911"
+                "4137b070-03e7-4e7d-bf33-dfedf5f39911",
+                "c0c591d1-6eb2-4537-9227-f2d12ba64b3c",
+                "b490b46a-e21a-4b1e-9976-ddeba8d1e7f1",
+                "dcdea0f3-e53d-4e09-af2d-1b6a76980303",
+                "f3d603eb-e74f-44f9-b591-6b0eded04600"
               ],
               "containedElements": [
                 "f52c96f2-53b3-4df9-aacf-0ee365723741",
@@ -763,6 +777,222 @@
               "y": 600
             },
             "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Return Data/Saldo",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
+            },
+            "labels": [
+              "Return Data/Saldo"
+            ],
+            "id": "c0c591d1-6eb2-4537-9227-f2d12ba64b3c",
+            "source": {
+              "cell": "f52c96f2-53b3-4df9-aacf-0ee365723741",
+              "port": "14b8dd87-868a-4582-af3f-ac0419eaaaa2"
+            },
+            "target": {
+              "cell": "b985135e-5e84-4e77-8538-979bafb55a62",
+              "port": "641aded0-7f43-4a6e-8473-90d62b01834d"
+            },
+            "vertices": [
+              {
+                "x": 710,
+                "y": 80
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Status Simpan Berhasil",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
+            },
+            "labels": [
+              "Status Simpan Berhasil"
+            ],
+            "id": "b490b46a-e21a-4b1e-9976-ddeba8d1e7f1",
+            "source": {
+              "cell": "5da24c1e-ebb4-45ed-b264-e96281dd7684",
+              "port": "14b8dd87-868a-4582-af3f-ac0419eaaaa2"
+            },
+            "target": {
+              "cell": "b985135e-5e84-4e77-8538-979bafb55a62",
+              "port": "e9850e02-f171-4453-a081-50de0bf1a6ef"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 175
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Laporan / Log Transaksi",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
+            },
+            "labels": [
+              "Data Laporan / Log Transaksi"
+            ],
+            "id": "dcdea0f3-e53d-4e09-af2d-1b6a76980303",
+            "source": {
+              "cell": "f52c96f2-53b3-4df9-aacf-0ee365723741",
+              "port": "0bb890a5-42b5-49f0-861d-442a41986337"
+            },
+            "target": {
+              "cell": "5cf21a29-f71e-4694-b96b-b26b98156185",
+              "port": "ddabbabd-c5a1-46ee-99b1-654f69cd4d5c"
+            },
+            "vertices": [
+              {
+                "x": 1100,
+                "y": 40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Laporan / Log Transaksi",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
+            },
+            "labels": [
+              "Data Laporan / Log Transaksi"
+            ],
+            "id": "f3d603eb-e74f-44f9-b591-6b0eded04600",
+            "source": {
+              "cell": "5da24c1e-ebb4-45ed-b264-e96281dd7684",
+              "port": "0bb890a5-42b5-49f0-861d-442a41986337"
+            },
+            "target": {
+              "cell": "5cf21a29-f71e-4694-b96b-b26b98156185",
+              "port": "31494991-7654-40da-b289-06a8f6d8a56b"
+            },
+            "vertices": [
+              {
+                "x": 1110,
+                "y": 200
+              }
+            ]
           },
           {
             "position": {
