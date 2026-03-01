@@ -148,8 +148,8 @@
                 "text": "MobileApp"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -246,12 +246,67 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "4b9a027e-0f05-4d7f-97cd-24a63074fbe2",
+                  "title": "Serangan Brute Force pada Login",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Attacker melakukan brute force pada endpoint login untuk menebak kredensial pengguna (aset A-01).",
+                  "mitigation": "Gunakan multi-factor authentication (MFA) seperti OTP atau biometrik, dan terapkan rate limiting untuk membatasi jumlah percobaan login yang gagal.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "8"
+                },
+                {
+                  "id": "07853243-14c7-4055-88f5-9895c12a2776",
+                  "title": "Penyangkalan Transfer Dana oleh Pengguna",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "Pengguna menyangkal telah melakukan transfer dana ke rekening lain dan meminta uang kembali karena tidak ada bukti transaksi yang cukup (aset A-03).",
+                  "mitigation": "Terapkan audit logging yang detail (waktu, IP, perangkat, hash transaksi) dan gunakan mekanisme non-repudiation seperti tanda tangan digital atau notifikasi konfirmasi.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "7"
+                },
+                {
+                  "id": "9798039d-04f7-4a94-953c-f6517b5900fb",
+                  "title": "Serangan DDoS",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Attacker membanjiri server aplikasi dengan request palsu sehingga nasabah asli tidak bisa mengakses layanan (aset A-05).",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1601,6 +1656,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 5
   }
 }
