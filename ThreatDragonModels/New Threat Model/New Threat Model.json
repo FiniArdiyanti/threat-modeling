@@ -285,28 +285,73 @@
                   "severity": "High",
                   "type": "Denial of service",
                   "description": "Attacker membanjiri server aplikasi dengan request palsu sehingga nasabah asli tidak bisa mengakses layanan (aset A-05).",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Implementasi rate limiting, gunakan Web Application Firewall (WAF), dan siapkan mekanisme auto-scaling serta CDN untuk menyerap trafik abnormal.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 5,
                   "score": "8"
+                },
+                {
+                  "id": "2866e63f-baf8-4a19-81a3-4d13083453e3",
+                  "title": "Akses Fungsi Admin melalui Manipulasi API",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Pengguna biasa mengakses endpoint admin dengan memanipulasi parameter API (misalnya mengubah role atau melewati otorisasi) (aset A-06).",
+                  "mitigation": "Terapkan kontrol akses berbasis peran (RBAC) yang ketat, validasi token otentikasi pada setiap endpoint, dan lakukan pengecekan otorisasi di sisi server.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "9"
+                },
+                {
+                  "id": "2fd10cdb-3fe4-4383-b8ac-c66eb8aa870b",
+                  "title": "Manipulasi Konten Promo dan Banner",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attacker mengubah konten promo/banner di aplikasi untuk menyisipkan link phishing atau informasi palsu (aset A-07).",
+                  "mitigation": "Terapkan kontrol akses yang ketat pada fitur pengelolaan konten, gunakan validasi input dan sanitasi, serta lakukan pengecekan integritas data (misalnya checksum).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "6"
+                },
+                {
+                  "id": "bf66cd05-7d9b-40f4-b25a-fc9906d93d48",
+                  "title": "Eksploitasi Celah untuk Melacak Lokasi Nasabah",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Pengguna nakal memanfaatkan celah keamanan pada aplikasi untuk mengakses data lokasi nasabah lain yang seharusnya tidak diizinkan (aset A-08).",
+                  "mitigation": "Batasi akses ke data lokasi dengan izin yang sesuai, pastikan data lokasi tidak disimpan atau dikirim tanpa enkripsi, dan lakukan uji penetrasi pada fitur yang menangani data lokasi.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "4"
+                },
+                {
+                  "id": "60cf1f53-3012-4f9c-8a30-3b5480cce70e",
+                  "title": "Eskalasi Hak Akses menjadi Administrator Database",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Attacker mengeksploitasi celah keamanan (misalnya SQL injection atau konfigurasi server yang salah) untuk mengubah level akun biasa menjadi administrator database, sehingga dapat mengakses semua data nasabah (aset A-06).",
+                  "mitigation": "Terapkan prinsip least privilege, lakukan patch management rutin, gunakan parameterized query, dan batasi hak akses database hanya untuk fungsi yang diperlukan.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "10"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 1,
-                "tampering": 0,
+                "tampering": 1,
                 "repudiation": 1,
-                "informationDisclosure": 0,
-                "denialOfService": 1,
-                "elevationOfPrivilege": 0
+                "informationDisclosure": 1,
+                "denialOfService": 2,
+                "elevationOfPrivilege": 2
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -367,7 +412,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -388,13 +434,32 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "d6c10292-9b77-4319-b646-407750b56afe",
+                  "title": "Manipulasi Data Transaksi ke Payment Gateway",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attacker melakukan man-in-the-middle untuk mengubah parameter data (misalnya nominal uang atau rekening tujuan) saat data dikirim ke payment gateway (aset A-04).",
+                  "mitigation": "Gunakan enkripsi end-to-end (TLS), terapkan signing pada setiap request (misalnya HMAC), dan lakukan validasi integritas data di sisi server sebelum memproses transaksi.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": "9"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Request \nPembayaran Eksternal"
@@ -837,7 +902,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -858,15 +924,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "730bb573-c513-4018-9691-3a16b0ea7a37",
+                  "title": "Penyadapan Jaringan untuk Membaca Informasi Saldo",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Attacker menyadap komunikasi jaringan (misalnya melalui Wi-Fi publik) untuk membaca data saldo atau informasi sensitif lainnya yang sedang dikirim (aset A-02).",
+                  "mitigation": "Wajibkan penggunaan HTTPS dengan sertifikat valid, gunakan HSTS, dan hindari mengirim data sensitif dalam bentuk teks jelas (plaintext). Terapkan juga certificate pinning jika memungkinkan.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "8"
+                }
+              ],
               "trustBoundaryIds": [
                 "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Return Data/Saldo"
@@ -1187,11 +1272,13 @@
                 "text": "Transaction"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1288,13 +1375,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "590b71e4-1122-44cf-944e-5fdd886c938f",
+                  "title": "Manipulasi Riwayat Transaksi di Database",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attacker memodifikasi catatan riwayat transaksi (misalnya mengubah jumlah, tanggal, atau menghapus jejak) untuk menyembunyikan aktivitas ilegal (aset A-03).",
+                  "mitigation": "Gunakan enkripsi data at rest, terapkan logging perubahan (audit trail), batasi akses ke database hanya untuk pengguna yang berwenang, dan gunakan mekanisme deteksi anomali.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1555,6 +1662,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -1648,14 +1756,13 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "zIndex": 17
+            }
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 5
+    "threatTop": 14
   }
 }
