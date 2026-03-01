@@ -285,7 +285,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
             },
             "labels": [
               "Simpan Log Transaksi"
@@ -384,7 +386,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "8207139f-1a25-4ead-9263-6e9ca7ed8f23"
+              ]
             },
             "labels": [
               "Login & Request Transfer"
@@ -431,7 +435,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
             },
             "labels": [
               "Verifikasi Data & Cek Saldo"
@@ -550,6 +556,213 @@
                 "y": 330
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Audit & Kelola Data",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
+            },
+            "labels": [
+              "Audit & Kelola Data"
+            ],
+            "id": "c53c38bf-4408-4e2e-8d0a-d27a28fa3ffa",
+            "source": {
+              "cell": "5cf21a29-f71e-4694-b96b-b26b98156185",
+              "port": "4b53dcb4-e502-4a6a-9197-f9877b3a34df"
+            },
+            "target": {
+              "cell": "f52c96f2-53b3-4df9-aacf-0ee365723741",
+              "port": "0bb890a5-42b5-49f0-861d-442a41986337"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Audit & Kelola Data",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c"
+              ]
+            },
+            "labels": [
+              "Audit & Kelola Data"
+            ],
+            "id": "4137b070-03e7-4e7d-bf33-dfedf5f39911",
+            "source": {
+              "cell": "5cf21a29-f71e-4694-b96b-b26b98156185",
+              "port": "4b53dcb4-e502-4a6a-9197-f9877b3a34df"
+            },
+            "target": {
+              "cell": "5da24c1e-ebb4-45ed-b264-e96281dd7684",
+              "port": "0bb890a5-42b5-49f0-861d-442a41986337"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Interner Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "f93ba7cb-d84c-474f-b5e9-60f7b4ea93a9"
+              ],
+              "containedElements": [
+                "c11a579c-321f-4eae-836f-f7f1c8966dfa"
+              ]
+            },
+            "labels": [
+              "Interner Boundary"
+            ],
+            "id": "8207139f-1a25-4ead-9263-6e9ca7ed8f23",
+            "source": {
+              "x": 210,
+              "y": 160
+            },
+            "target": {
+              "x": 380,
+              "y": -20
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 110
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Internal Bank Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "b950b049-793a-4474-b143-de789f419342",
+                "486703df-3427-4806-baf2-e23e8f826317",
+                "c53c38bf-4408-4e2e-8d0a-d27a28fa3ffa",
+                "4137b070-03e7-4e7d-bf33-dfedf5f39911"
+              ],
+              "containedElements": [
+                "f52c96f2-53b3-4df9-aacf-0ee365723741",
+                "5da24c1e-ebb4-45ed-b264-e96281dd7684"
+              ]
+            },
+            "labels": [
+              "Internal Bank Boundary"
+            ],
+            "id": "6a83e8bc-a495-4eb1-9cf7-a11a6a489a0c",
+            "source": {
+              "x": 720,
+              "y": -40
+            },
+            "target": {
+              "x": 1260,
+              "y": 260
+            },
+            "vertices": [
+              {
+                "x": 790,
+                "y": 240
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "External Network Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "labels": [
+              "External Network Boundary"
+            ],
+            "id": "09409eb3-9577-4795-b767-fb3e3f3fb905",
+            "source": {
+              "x": 420,
+              "y": 170
+            },
+            "target": {
+              "x": 420,
+              "y": 600
+            },
+            "vertices": []
           },
           {
             "position": {
@@ -677,7 +890,7 @@
           },
           {
             "position": {
-              "x": 820,
+              "x": 840,
               "y": 145
             },
             "size": {
@@ -801,7 +1014,7 @@
           },
           {
             "position": {
-              "x": 520,
+              "x": 560,
               "y": 270
             },
             "size": {
@@ -1149,6 +1362,123 @@
               "providesAuthentication": false,
               "threats": []
             }
+          },
+          {
+            "position": {
+              "x": 1160,
+              "y": 90
+            },
+            "size": {
+              "width": 110,
+              "height": 50
+            },
+            "attrs": {
+              "text": {
+                "text": "Bank Admin"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "ddabbabd-c5a1-46ee-99b1-654f69cd4d5c"
+                },
+                {
+                  "group": "right",
+                  "id": "6f598bf2-91ab-4cf3-81cf-8a2125a210ed"
+                },
+                {
+                  "group": "bottom",
+                  "id": "31494991-7654-40da-b289-06a8f6d8a56b"
+                },
+                {
+                  "group": "left",
+                  "id": "4b53dcb4-e502-4a6a-9197-f9877b3a34df"
+                }
+              ]
+            },
+            "id": "5cf21a29-f71e-4694-b96b-b26b98156185",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Bank Admin",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            },
+            "zIndex": 17
           }
         ]
       }
