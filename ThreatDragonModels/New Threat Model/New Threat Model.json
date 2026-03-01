@@ -663,7 +663,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Interner Boundary",
+              "name": "Internet Boundary",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -675,7 +675,7 @@
               ]
             },
             "labels": [
-              "Interner Boundary"
+              "Internet Boundary"
             ],
             "id": "8207139f-1a25-4ead-9263-6e9ca7ed8f23",
             "source": {
@@ -1240,120 +1240,6 @@
             "data": {
               "type": "tm.Actor",
               "name": "External\nPayment System",
-              "description": "",
-              "isTrustBoundary": false,
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "providesAuthentication": false,
-              "threats": []
-            }
-          },
-          {
-            "position": {
-              "x": 90,
-              "y": 450
-            },
-            "size": {
-              "width": 112.5,
-              "height": 60
-            },
-            "attrs": {
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "actor",
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "b7cbc15e-d9be-4573-acaa-40d2ba6a8377"
-                },
-                {
-                  "group": "right",
-                  "id": "dfdc7f43-f363-413c-87c7-783ea17f4149"
-                },
-                {
-                  "group": "bottom",
-                  "id": "9d2e3168-4b9f-411d-b044-7a6b9287733a"
-                },
-                {
-                  "group": "left",
-                  "id": "8a04383b-a17d-4dfa-8bc8-ebc52b81d994"
-                }
-              ]
-            },
-            "id": "37539422-6152-4b73-838b-02f880d39075",
-            "zIndex": 16,
-            "data": {
-              "type": "tm.Actor",
-              "name": "Actor",
               "description": "",
               "isTrustBoundary": false,
               "outOfScope": false,
